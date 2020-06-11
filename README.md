@@ -8,28 +8,28 @@ Currently, the main focus is on "custom chart" metrics.
 
 Line charts are the default, but Pie, Top List and Single view should work as well, after modification to the "Tiles" worksheet "tileType" column.<br />  
 
-There is an "Overview" dashboard created as well, that has links to itself only by default and requires the user to modify the links to point to the destination dashboards.
-This will be automated in a future release.<br />  
+There is an "Overview" dashboard created as well, and it has markdown tile links to various detail dashboards.  Currently, the link to the "Databases" detail dashboard is broken because the "Databases" dashboard is too complex to automate.  You can grab the "Databases" dashboard from https://github.com/Dynatrace-Dave-Mauney/DashboardTemplates if you want to make this work before it is fixed in a future release.<br />  
 
 You can control which dashboards are created by either deleting a row from the "Dashboards" worksheet, or better, by setting the "process" column to "false".
 
-tileTypes Currently Supported:
-MARKDOWN
-HOSTS
-SERVICES
-APPLICATIONS
-DATABASES_OVERVIEW
+tileTypes Currently Supported:<br /> 
+MARKDOWN<br /> 
+HOSTS<br /> 
+SERVICES<br /> 
+APPLICATIONS<br /> 
+DATABASES_OVERVIEW<br /> 
 SYNTHETIC_TESTS<br />  
-
-HEADER should also work, but I haven't tried it yet.
-<br />  
+<br /> 
+HEADER should also work, but I haven't tested it yet.<br />  
 
 These dashboards are "generic" -- they are not limited to specific entities and work well with Management Zones.<br />
 
 Notes: <br />
-The Overview dashboard provides drilldowns to child dashboards via markdown tiles.<br />
-You might want to modify the owner to your email address or a customer email address.<br />
-Version differences can be an issue, so select the most recent version equal or prior to the version of the cluster/tenant you are importing into.<br />
-Always use PUT rather than POST as the IDs are designed to remain static and PUT allows that.<br />
+You will want to modify the owner to your email address or a customer email address.<br />
 
-See my "Snippets" repo for Python modules to assist with pushing dashboards, saving dashboards (or other configuration entities) and so forth.<br />
+Use "perform_entire_process.py" to run the whole generation process.<br />
+
+Always use PUT rather than POST for uploading the dashboards as the IDs are designed to remain static and PUT allows that.  This is handled automatically, if you use the supplied "put_all_dashboards_util.py" module to upload dashboards.<br />
+
+See https://github.com/Dynatrace-Dave-Mauney/Snippets for Python modules to assist with downloading dashboards (or other configuration entities) and so forth.
+<br />

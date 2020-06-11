@@ -277,14 +277,12 @@ def increment_name(name, id):
     return new_name
 
 #
-# Read the "DashboardGenerator.xlsx" file
+# Read the "dashboard_controller.xlsx" file
 # For each Dashboard Sheet Row, Find the matching Tile Sheet Rows
 # If there are matches, write the dashboard and the matching tiles to JSON dashboard file
 #
 def generate():
-    #file = r'metrics.xlsx'
-    file = r'metrics_1.194.56.20200527-084819.xlsx'
-    #file = r'metricsForTemplatesv192.xlsx'
+    file = r'dashboard_controller.xlsx'
     dashboards = pd.read_excel(file, sheet_name='Dashboards', na_filter=False)
     tiles = pd.read_excel(file, sheet_name='Tiles', na_filter=False)
 
