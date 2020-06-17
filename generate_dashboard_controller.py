@@ -13,7 +13,7 @@ from metric_dashboard_name_dictionary import METRIC_DASHBOARD_NAME_DICTIONARY
 def main():
     # Use version file to obtain the version details
     with open('version.txt', 'r') as file:
-        version = file.read()
+        version = file.read().strip()
     print('version: ' + version)
 
     infile = open('metrics.txt', 'r')

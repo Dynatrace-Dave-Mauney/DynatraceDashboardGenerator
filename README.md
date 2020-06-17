@@ -12,22 +12,22 @@ There is an "Overview" dashboard created as well, and it has markdown tile links
 
 You can control which dashboards are created by either deleting a row from the "Dashboards" worksheet, or better, by setting the "process" column to "false".
 
-tileTypes Currently Supported:<br /> 
+Tile Types Currently Supported:<br /> 
 MARKDOWN<br /> 
 HOSTS<br /> 
 SERVICES<br /> 
 APPLICATIONS<br /> 
 DATABASES_OVERVIEW<br /> 
 SYNTHETIC_TESTS<br />  
-<br /> 
 HEADER should also work, but I haven't tested it yet.<br />  
 
 These dashboards are "generic" -- they are not limited to specific entities and work well with Management Zones.<br />
 
 Notes: <br />
-You will want to modify the owner to your email address or a customer email address.<br />
+Modify the owner to your email address or a customer email address.<br />
 
-Use "perform_entire_process.py" to run the whole generation process.<br />
+Use "perform_entire_process.py" to run the whole generation process.
+And refer to it for ways to modify the automation.<br />
 
 Always use PUT rather than POST for uploading the dashboards as the IDs are designed to remain static and PUT allows that.  This is handled automatically, if you use the supplied "put_all_dashboards_util.py" module to upload dashboards.<br />
 
